@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 10:52:50 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/07 12:20:09 by lgernido         ###   ########.fr       */
+/*   Created: 2023/11/07 15:21:35 by lgernido          #+#    #+#             */
+/*   Updated: 2023/11/07 15:34:09 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(unsigned char c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (c >= "0" && c <= "9" || c >= "A" && c <= "Z" || c >= "a" && c <= "z")
-		return (1);
-	else
-		return (0);
+	int nb;
+
+	nb = n;
+	if (nb == -2147483647)
+		write(fd, '-2147483647', 11);
+	else if (nb < 0)
+		nb = -nb;
+	else if (nb < 10)
+		write(fd, nb + '0', 1);
+	else if (nb >= 10)
+		ft_putnbr_fd(nb / 10, fd);
 }

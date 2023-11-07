@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
+/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:12:06 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/06 17:15:00 by luciegernid      ###   ########.fr       */
+/*   Updated: 2023/11/07 17:54:14 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strrchr(const char	*s, int c)
+#include "libft.h"
+
+char	*strrchr(const char *s, int c)
 {
-	
-	int	i;
+	int i;
 
 	i = 0;
 	while (s[i] != 0) // boucle qui determine la longueur de s
@@ -21,7 +22,7 @@ char	*strrchr(const char	*s, int c)
 	while (i >= 0) // chercher dans la chaine a partir de la fin
 	{
 		if (s[i] == (char)c)
-			return ((char*)(s + i));
+			return ((char *)(s + i));
 		i--;
 	}
 	return (NULL);

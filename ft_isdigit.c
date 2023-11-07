@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
+/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 10:49:21 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/10/16 10:51:49 by luciegernid      ###   ########.fr       */
+/*   Updated: 2023/11/07 12:21:54 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(char c)
 {
 	if (c >= "0" && c <= "9")
-		return 1;
+		return (1);
 	else
-		return 0;
+		return (0);
 }

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
+/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:17:28 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/06 17:19:53 by luciegernid      ###   ########.fr       */
+/*   Updated: 2023/11/07 12:23:04 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memchr(const void	*s, int c, size_t n)
+void	*memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
 
@@ -19,8 +19,8 @@ void	*memchr(const void	*s, int c, size_t n)
 		return (NULL);
 	while (i < n)
 	{
-		if (*(unsigned char*)(s + i) == (unsigned char)c)
-			return ((void*)(s + i));
+		if (*(unsigned char *)(s + i) == (unsigned char)c)
+			return ((void *)(s + i));
 		i++;
 	}
 	return (NULL);

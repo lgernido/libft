@@ -1,40 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 08:51:05 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/07 14:33:32 by lgernido         ###   ########.fr       */
+/*   Created: 2023/11/07 11:19:40 by lgernido          #+#    #+#             */
+/*   Updated: 2023/11/07 16:28:04 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
-{
-	int	i;
-	int	nb;
-	int	sign;
+#include <stdlib.h>
 
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	int		i;
+	int		j;
+	int		size_s1;
+	int		size_s2;
+	char	*s3;
+
+	size_s1 = 0;
+	size_s2 = 0;
 	i = 0;
-	nb = 0;
-	sign = 0;
-	while (str[i] >= 9 && str[i] <= 13 || str[i] == 32)
-		i++;
-	while (str[i] == '+' || str[i] == '-')
+	j = 0;
+	while (s1[size_s1])
+		size_s1++;
+	while (s2[size_s2])
+		size_s2++;
+	s3 = malloc(sizeof(char) * (size_s1 + size_s2 + 1));
+	if (s3 == 0)
+		return (NULL);
+	while (s1[i])
 	{
-		if (str[i] == '-')
-			sign++;
+		s3[j++] = s1[i];
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	i = 0;
+	while (s2[i])
 	{
-		nb = nb + str[i] - '0';
-		if (str[i + 1] >= '0' && str[i + 1] <= '9')
-			nb = nb * 10;
+		s3[j++] = s2[i];
 		i++;
 	}
-	if (sign > 0)
-		return (-nb);
-	return (nb);
+	s3[j] = 0;
+	return (s3);
 }

@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 10:52:50 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/07 12:20:09 by lgernido         ###   ########.fr       */
+/*   Created: 2023/11/07 15:18:39 by lgernido          #+#    #+#             */
+/*   Updated: 2023/11/07 15:20:30 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(unsigned char c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (c >= "0" && c <= "9" || c >= "A" && c <= "Z" || c >= "a" && c <= "z")
-		return (1);
-	else
-		return (0);
+	int i;
+
+	i = 0;
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
 }

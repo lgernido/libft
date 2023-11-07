@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
+/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:02:11 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/06 14:23:33 by luciegernid      ###   ########.fr       */
+/*   Updated: 2023/11/07 14:30:15 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *memcpy(void *dst, const void *src, size_t n)
+#include <stdlib.h>
+
+void	*memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 
@@ -21,10 +23,9 @@ void *memcpy(void *dst, const void *src, size_t n)
 		i = 0;
 		while (i < n)
 		{
-			*(char *)(dst + i) = *(char *)(src + i); // expliciter l'utilisation de donnees comme type char
+			*(char *)(dst + i) = *(char *)(src + i);
 			i++;
 		}
 	}
 	return (dst);
-
 }

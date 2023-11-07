@@ -3,30 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
+/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:10:30 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/10/16 11:16:51 by luciegernid      ###   ########.fr       */
+/*   Updated: 2023/11/07 17:54:11 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 char	ft_tolower(char c)
 {
 	if (c >= "A" && c <= "Z")
-		return c + 32;
+		return (c + 32);
 	else
-		return c;
-}
-
-int main(int argc, char **argv)
-{
-	if (argc == 2)
-	{
-		printf('%s', ft_tolower(argv));
-	}
-	else
-		printf("ERREUR");
-	return 0;
+		return (c);
 }

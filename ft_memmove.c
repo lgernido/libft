@@ -3,25 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
+/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:24:52 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/06 14:38:16 by luciegernid      ###   ########.fr       */
+/*   Updated: 2023/11/07 14:30:12 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	int	i;
 
 	i = 0;
-	if (dst == 0  || src == 0)
+	if (dst == 0 || src == 0)
 		return (NULL);
-	if (dst > src) // dst est apres src dans la memoire donc on commence la copie par le fin pour eviter le chevauchement
+	if (dst > src)
 	{
 		while (len > 0)
 		{
-			len --;
+			len--;
 			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
 		}
 	}
@@ -29,7 +31,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		while (i < len)
 		{
-			*(char *)(dst + i) = *(char *)(src + i); // expliciter l'utilisation de donnees comme type char
+			*(char *)(dst + i) = *(char *)(src + i);
 			i++;
 		}
 	}

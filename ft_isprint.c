@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
+/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:01:39 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/10/16 11:05:57 by luciegernid      ###   ########.fr       */
+/*   Updated: 2023/11/07 12:22:12 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(char c)
 {
 	if (c >= 32 && c <= 126)
-		return 1;
+		return (1);
 	else
-		return 0;
+		return (0);
 }

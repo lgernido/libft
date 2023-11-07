@@ -1,19 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 10:52:50 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/07 12:20:09 by lgernido         ###   ########.fr       */
+/*   Created: 2023/11/07 10:57:40 by lgernido          #+#    #+#             */
+/*   Updated: 2023/11/07 11:59:05 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(unsigned char c)
+#include <stdlib.h>
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	if (c >= "0" && c <= "9" || c >= "A" && c <= "Z" || c >= "a" && c <= "z")
-		return (1);
-	else
-		return (0);
+	int		i;
+	int		j;
+	int		size;
+	char	*str;
+
+	size = 0;
+	i = start;
+	while (s[i])
+		size++;
+	if (size > len)
+		str = malloc(sizeof(char) * (len + 1));
+	if (size <= len)
+		str = malloc(sizeof(char) * (size + 1));
+	if (str == 0)
+		return (NULL);
+	j = 0;
+	while (str[j])
+	{
+		str[j] = s[start];
+		j++;
+		start++;
+	}
+	return (str);
 }

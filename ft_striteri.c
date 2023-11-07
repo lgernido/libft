@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 10:52:50 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/07 12:20:09 by lgernido         ###   ########.fr       */
+/*   Created: 2023/11/07 17:49:32 by lgernido          #+#    #+#             */
+/*   Updated: 2023/11/07 17:56:22 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(unsigned char c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	if (c >= "0" && c <= "9" || c >= "A" && c <= "Z" || c >= "a" && c <= "z")
-		return (1);
-	else
-		return (0);
+	int i;
+
+	i = 0;
+	while (s[i])
+	{
+		s[i] = (*)(i, s[i]);
+		i++;
+	}
 }

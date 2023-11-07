@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
+/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:39:50 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/06 14:46:57 by luciegernid      ###   ########.fr       */
+/*   Updated: 2023/11/07 16:14:58 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlcpy( char *dst, const char *src, size_t dstsize)
+#include <unistd.h>
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 
@@ -22,7 +24,7 @@ size_t	ft_strlcpy( char *dst, const char *src, size_t dstsize)
 			dst[i] = src[i];
 			i++;
 		}
-		dst[i] = 0;
+		dst[i] = '\0';
 	}
 	while (src[i])
 		i++;
