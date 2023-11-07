@@ -6,11 +6,11 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:39:50 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/07 16:14:58 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/07 18:19:02 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

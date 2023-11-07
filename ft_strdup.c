@@ -6,22 +6,22 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:58:04 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/07 10:58:32 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/07 18:18:08 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	*strdup(const char	*s)
+char	*strdup(const char *s)
 {
-	char	*dup;
-	int	i;
+	char *dup;
+	int i;
 	int size;
 
 	size = 0;
 	while (s[size] != 0)
 		size++;
-	dup = malloc(sizeof (char) * (size + 1));
+	dup = malloc(sizeof(char) * (size + 1));
 	if (dup == 0)
 		return (NULL);
 	i = 0;
@@ -31,5 +31,5 @@ char	*strdup(const char	*s)
 		i++;
 	}
 	dup[i] = 0;
-	return dup;
+	return (dup);
 }

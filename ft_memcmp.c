@@ -6,11 +6,11 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:21:48 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/07 14:30:19 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/07 18:18:18 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	memcmp(const void *s1, const void *s2, size_t n)
 {

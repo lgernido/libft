@@ -6,11 +6,11 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 10:49:21 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/07 12:21:54 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/07 18:18:32 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
 	if (c >= "0" && c <= "9")
 		return (1);

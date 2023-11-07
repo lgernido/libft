@@ -6,9 +6,11 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 13:49:25 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/07 12:19:24 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/07 18:18:43 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

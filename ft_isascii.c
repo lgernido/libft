@@ -6,11 +6,11 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 10:56:39 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/07 12:21:28 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/07 18:18:27 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(char c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);

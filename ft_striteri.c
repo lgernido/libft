@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:49:32 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/07 17:56:22 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/07 18:18:22 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	i = 0;
 	while (s[i])
 	{
-		s[i] = (*)(i, s[i]);
+		(*f)(i, s[i]);
 		i++;
 	}
 }

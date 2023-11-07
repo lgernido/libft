@@ -6,11 +6,11 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 13:35:16 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/07 12:37:43 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/07 18:17:56 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*memset(void *b, int c, size_t len)
 {

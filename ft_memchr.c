@@ -6,9 +6,11 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:17:28 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/07 12:23:04 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/07 18:18:50 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*memchr(const void *s, int c, size_t n)
 {
