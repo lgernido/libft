@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 09:06:41 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/08 12:53:20 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/08 19:17:35 by luciegernid      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_strsize(int n)
+static int	ft_strsize(int n)
 {
-	size_t	size;
+	int	size;
 	int		nb;
 
 	nb = n;

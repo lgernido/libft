@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:45:17 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/08 12:53:48 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/08 19:35:37 by luciegernid      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_strsize(char const *s, char const *set)
+static int	ft_strsize(char const *s, char const *set)
 {
-	size_t	set_size;
-	size_t	trimstr_size;
+	int	set_size;
+	int	trimstr_size;
 
 	set_size = ft_strlen(set);
 	trimstr_size = ft_strlen(s) - set_size * 2;

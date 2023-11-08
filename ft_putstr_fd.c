@@ -6,7 +6,7 @@
 /*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:18:39 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/08 06:33:32 by luciegernid      ###   ########.fr       */
+/*   Updated: 2023/11/08 20:03:56 by luciegernid      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,5 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int i;
-
-	i = 0;
-	while (s[i])
-	{
-		write(fd, s[i], 1);
-		i++;
-	}
+		write(fd, s, ft_strlen(s));
 }

@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 10:32:39 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/07 17:54:25 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/08 19:32:36 by luciegernid      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int i;
 
 	i = 0;
-	while (str[i] = !0)
+	while (str[i])
 		i++;
 	return (i);
 }

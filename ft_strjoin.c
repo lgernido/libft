@@ -6,11 +6,12 @@
 /*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 11:19:40 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/08 06:13:18 by luciegernid      ###   ########.fr       */
+/*   Updated: 2023/11/08 19:33:08 by luciegernid      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:35:33 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/07 18:18:06 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/08 19:33:22 by luciegernid      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

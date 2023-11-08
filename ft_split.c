@@ -3,21 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:17:28 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/08 12:52:56 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/08 19:23:40 by luciegernid      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_words(char *str, char c)
+static size_t	count_words(const char *str, char c)
 {
 	int		i;
 	size_t	words;
 
 	words = 1;
+	i = 0;
 	while (str[i])
 	{
 		if (str[i] == c)
@@ -28,7 +29,7 @@ static size_t	count_words(char *str, char c)
 	return (words);
 }
 
-static size_t	tab_size(char *str, char c)
+static size_t	tab_size(const char *str, char c)
 {
 	int	i;
 	int	size;

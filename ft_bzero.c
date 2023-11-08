@@ -6,7 +6,7 @@
 /*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 13:49:25 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/08 06:30:37 by luciegernid      ###   ########.fr       */
+/*   Updated: 2023/11/08 19:09:00 by luciegernid      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_bzero(void *s, size_t n)
 
 	i = 0;
 	if (n == 0)
-		return (NULL);
+		return ;
 	while (i < n)
 	{
 		*(char *)(s + i) = 0;

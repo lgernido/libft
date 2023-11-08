@@ -6,7 +6,7 @@
 /*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:15:31 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/08 06:07:34 by luciegernid      ###   ########.fr       */
+/*   Updated: 2023/11/08 19:34:50 by luciegernid      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,12 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	asw = malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (asw == '\0')
+	if (asw == 0)
 		return (NULL);
 	while (s[i])
 	{
 		asw[i] = (*f)(i, s[i]);
 		i++;
 	}
-	asw[i] = '\0';
 	return (asw);
 }
