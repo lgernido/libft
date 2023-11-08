@@ -6,14 +6,14 @@
 /*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:07:34 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/10/16 11:11:47 by luciegernid      ###   ########.fr       */
+/*   Updated: 2023/11/08 06:35:55 by luciegernid      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_toupper(char c)
+char	ft_toupper(int c)
 {
-	if (c >= "a" && c <= "z")
-		return c - 32;
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
 	else
-		return c;
+		return (c);
 }

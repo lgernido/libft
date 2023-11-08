@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:15:31 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/07 17:54:37 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/08 06:07:34 by luciegernid      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		asw[i] = (*f)(i, s[i]);
 		i++;
 	}
+	asw[i] = '\0';
 	return (asw);
 }
