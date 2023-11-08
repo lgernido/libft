@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:45:17 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/08 09:05:54 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/08 12:53:48 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ static size_t	ft_strsize(char const *s, char const *set)
 
 char	*ft_strtrim(char const *s, char const *set)
 {
-	int start;
-	int i;
-	char *strtrim;
+	int		start;
+	int		i;
+	char	*strtrim;
 
 	strtrim = malloc(sizeof(char) * ft_strsize(s, set));
 	if (strtrim == 0)

@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:17:28 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/08 12:17:28 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/08 12:52:56 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ static size_t	tab_size(char *str, char c)
 char	**ft_split(char const *s, char c)
 {
 	char **tab;
-
 	int i;
 	int j;
 	int k;
