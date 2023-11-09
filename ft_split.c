@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:17:28 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/09 17:48:48 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/09 18:12:40 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ char	**ft_split(char const *s, char c)
 		k = 0;
 		while (s[i] == c)
 		{
-			tab[j][k] = s[i];
+			tab[j] = s[i];
 			i++;
 			k++;
 		}
