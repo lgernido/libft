@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
+/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:17:28 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/08 19:23:40 by luciegernid      ###   ########.fr       */
+/*   Updated: 2023/11/09 17:48:48 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ static size_t	count_words(const char *str, char c)
 	{
 		if (str[i] == c)
 			words++;
-		i++;
 		i++;
 	}
 	return (words);
@@ -59,7 +58,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	tab = calloc(count_words(s, c), tab_size(s, c));
-	if (tab == 0)
+	if (!tab)
 		return (NULL);
 	while (*tab[j])
 	{

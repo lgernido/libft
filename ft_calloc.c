@@ -3,36 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
+/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:58:19 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/08 19:09:36 by luciegernid      ###   ########.fr       */
+/*   Updated: 2023/11/09 17:10:25 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	char	**tab;
-	int		i;
-	int		j;
+	void	*tab;
 
-	if (nmemb == '\0' || size == '\0')
+	tab = (void *)malloc(nmemb * size);
+	if (!tab)
 		return (NULL);
-	tab = malloc(nmemb * size);
-	if (tab == 0)
-		return (NULL);
-	i = 0;
-	while (*tab[i])
-	{
-		j = 0;
-		while (tab[i][j])
-		{
-			tab[i][j] = '\0';
-			j++;
-		}
-		i++;
-	}
+	ft_memset(tab, 0, nmemb * size);
 	return (tab);
 }

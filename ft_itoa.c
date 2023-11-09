@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
+/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 09:06:41 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/08 19:17:35 by luciegernid      ###   ########.fr       */
+/*   Updated: 2023/11/09 16:50:40 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,16 @@
 static int	ft_strsize(int n)
 {
 	int	size;
-	int		nb;
 
-	nb = n;
 	size = 0;
 	if (n < 0)
 	{
-		nb = -nb;
+		n = -n;
 		size = 1;
 	}
-	while (nb > 1)
+	while (n > 1)
 	{
-		nb /= 10;
+		n /= 10;
 		size++;
 	}
 	return (size);
@@ -40,11 +38,11 @@ static char	*ft_strrev(char *str)
 
 	i = 0;
 	size = ft_strlen(str);
-	while (i != size / 2)
+	while (i < size / 2)
 	{
 		str[i] = tmp;
-		tmp = str[size];
-		str[size] = str[i];
+		tmp = str[size - 1];
+		str[size - 1] = str[i];
 		i++;
 		size--;
 	}
