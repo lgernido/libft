@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:45:17 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/10 15:03:28 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/10 18:49:20 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	start = 0;
 	end = ft_strlen(s1);
-	while (ft_findset(s1[start], set) == 1 && s1[start])
+	while (ft_findset(s1[start], set) && s1[start])
 		start++;
-	while (ft_findset(s1[end], set) == 1 && end > start)
+	while (ft_findset(s1[end], set) && end > start)
 		end--;
 	res = malloc(sizeof(char) * (end - start + 1));
-	if (res == 0)
+	if (!res)
 		return (NULL);
 	while (start < end)
 	{
@@ -57,13 +57,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 int	main(void)
 {
 	// Test cases
-	char str1[] = "   Hello, World!   ";
+	char str1[] = " xx  Hello, World!   x";
 	char str2[] = "   \t \n  Trim Me! \t \n  ";
 	char str3[] = "NoTrimsHere";
 	char str4[] = " \t \n \t ";
 
 	// Test ft_strtrim
-	char *trimmed_str1 = ft_strtrim(str1, " \t\n");
+	char *trimmed_str1 = ft_strtrim(str1, "x");
 	char *trimmed_str2 = ft_strtrim(str2, " \t\n");
 	char *trimmed_str3 = ft_strtrim(str3, " \t\n");
 	char *trimmed_str4 = ft_strtrim(str4, " \t\n");
