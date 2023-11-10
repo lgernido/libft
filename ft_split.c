@@ -1,77 +1,66 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 10:17:28 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/09 18:12:40 by lgernido         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
-static size_t	count_words(const char *str, char c)
+static int	count_words(char const *s, char c)
 {
-	int		i;
-	size_t	words;
+	int	i;
+	int	words;
 
-	words = 1;
 	i = 0;
-	while (str[i])
+	words = 0;
+	while (s[i] != 0)
 	{
-		if (str[i] == c)
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == 0))
 			words++;
 		i++;
 	}
 	return (words);
 }
 
-static size_t	tab_size(const char *str, char c)
+static	int	word_size(char const *s, char c)
 {
 	int	i;
-	int	size;
+	int	len;
 
-	i = 1;
-	while (str[i])
+	i = 0;
+	len = 0;
+
+	while(s[i] && s[i] != c)
 	{
-		size = 0;
-		while (str[i] != c)
-		{
-			size++;
-			i++;
-		}
-		if (str[i] == c)
-			i++;
+		i++;
+		len++;
 	}
-	return (size);
+	return (len);
 }
+
 
 char	**ft_split(char const *s, char c)
 {
-	char **tab;
-	int i;
-	int j;
-	int k;
+	int	i;
+	int	size;
+	int	words;
+	char	**res;
 
+	words = count_words(s, c);
 	i = 0;
-	j = 0;
-	tab = calloc(count_words(s, c), tab_size(s, c));
-	if (!tab)
+	if (!s)
 		return (NULL);
-	while (*tab[j])
+*res = malloc(sizeof(char *) * (words + 1));
+	if (!res)
+		return (NULL);
+	while (i < words)
 	{
-		k = 0;
-		while (s[i] == c)
+		while(*s && *s == c)
+			s++;
+		size = word_size(s, c);
+		res[i] = ft_strndup(s, size);
+		if (!res[i])
 		{
-			tab[j] = s[i];
-			i++;
-			k++;
+			free(res[i]);
+			return(NULL);
 		}
-		if (s[i] == 1)
-			i++;
-		j++;
+		s += size;
+		i++;
 	}
-	return (tab);
+	res[words] = 0;
+	return (res);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 09:06:41 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/09 16:50:40 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/10 06:25:09 by luciegernid      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,62 +15,44 @@
 static int	ft_strsize(int n)
 {
 	int	size;
+	int	nb;
 
 	size = 0;
-	if (n < 0)
+	nb = n;
+	if (nb < 0)
 	{
-		n = -n;
-		size = 1;
-	}
-	while (n > 1)
-	{
-		n /= 10;
 		size++;
+		n *= -1;
+	}
+	while (n >= 10)
+	{
+		size++;
+		n /= 10;
 	}
 	return (size);
-}
-
-static char	*ft_strrev(char *str)
-{
-	int	i;
-	int	tmp;
-	int	size;
-
-	i = 0;
-	size = ft_strlen(str);
-	while (i < size / 2)
-	{
-		str[i] = tmp;
-		tmp = str[size - 1];
-		str[size - 1] = str[i];
-		i++;
-		size--;
-	}
-	return (str);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*str;
 	int		i;
+	int		nb;
+	int		size;
 
-	str = malloc(sizeof(char) * ft_strsize(n) + 1);
+	nb = n;
+	size = ft_strsize(n);
+	str = malloc(sizeof(char) * size + 1);
 	if (str == 0)
 		return (NULL);
+	str[size] = 0;
 	i = 0;
+	if (i < size)
+	{
+		str[size - i - 1] = nb % 10 + '0';
+		nb /= 10;
+		i++;
+	}
 	if (n < 0)
-	{
-		n = -n;
-		str[i] = '-';
-		i++;
-	}
-	while (i != ft_strsize(n))
-	{
-		str[i] = n % 10 + '0';
-		n /= 10;
-		i++;
-	}
-	str[i] = '\0';
-	str = ft_strrev(str);
+		str[0] = '-';
 	return (str);
 }
