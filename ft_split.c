@@ -1,4 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/10 08:17:11 by lgernido          #+#    #+#             */
+/*   Updated: 2023/11/10 10:39:11 by lgernido         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
+
+char	*ft_strndup(const char *s, size_t n)
+{
+	char	*dup;
+	size_t	i;
+	size_t	size;
+
+	size = ft_strlen(s);
+	if (size > n)
+		dup = malloc(sizeof(char) * (n + 1));
+	else
+		dup = malloc(sizeof(char) * (size + 1));
+	if (dup == 0)
+		return (NULL);
+	i = 0;
+	while (s[i] && i < n)
+	{
+		dup[i] = s[i];
+		i++;
+	}
+	dup[i] = 0;
+	return (dup);
+}
 
 static int	count_words(char const *s, char c)
 {
@@ -9,22 +44,21 @@ static int	count_words(char const *s, char c)
 	words = 0;
 	while (s[i] != 0)
 	{
-		if (s[i] != c && (s[i + 1] == c || s[i + 1] == 0))
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 			words++;
 		i++;
 	}
 	return (words);
 }
 
-static	int	word_size(char const *s, char c)
+static size_t	word_size(char const *s, char c)
 {
 	int	i;
 	int	len;
 
 	i = 0;
 	len = 0;
-
-	while(s[i] && s[i] != c)
+	while (s[i] && s[i] != c)
 	{
 		i++;
 		len++;
@@ -32,35 +66,34 @@ static	int	word_size(char const *s, char c)
 	return (len);
 }
 
-
 char	**ft_split(char const *s, char c)
 {
-	int	i;
-	int	size;
-	int	words;
+	int		i;
+	size_t	size;
+	int		words;
 	char	**res;
 
 	words = count_words(s, c);
 	i = 0;
-	if (!s)
+	if (s == 0)
 		return (NULL);
-*res = malloc(sizeof(char *) * (words + 1));
+	res = malloc(sizeof(char *) * (words + 1));
 	if (!res)
 		return (NULL);
 	while (i < words)
 	{
-		while(*s && *s == c)
+		while (*s && *s == c)
 			s++;
 		size = word_size(s, c);
 		res[i] = ft_strndup(s, size);
 		if (!res[i])
 		{
 			free(res[i]);
-			return(NULL);
+			return (NULL);
 		}
 		s += size;
 		i++;
 	}
-	res[words] = 0;
+	res[i] = '\0';
 	return (res);
 }

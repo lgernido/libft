@@ -6,67 +6,79 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:45:17 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/09 13:55:02 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/10 15:03:28 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_findset(const char *haystack, const char *needle, size_t len)
+static int	ft_findset(char c, const char *set)
 {
-	size_t	i;
-	size_t	j;
+	int	i;
 
-	if (haystack == 0 || needle == 0)
-		return (0);
-	if (needle == 0 || needle[0] == 0)
-		return (0);
 	i = 0;
-	while (haystack[i] && i < len)
+	while (set[i])
 	{
-		j = 0;
-		while (haystack[i + j] && needle[j] && i + j < len && haystack[i
-			+ j] == needle[j])
-			j++;
-		if (needle[j] == 0)
+		if (set[i] == c)
 			return (1);
 		i++;
 	}
 	return (0);
 }
 
-static int	ft_strsize(char const *s, char const *set)
-{
-	int	set_size;
-	int	trimstr_size;
-
-	set_size = 0;
-	while (s)
-	{
-		if (ft_findset(s, set, ft_strlen(s)) == 1)
-			set_size++;
-	}
-	trimstr_size = ft_strlen(s) - set_size;
-	return (trimstr_size);
-}
-
-char	*ft_strtrim(char const *s, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		start;
+	int		end;
+	char	*res;
 	int		i;
-	char	*strtrim;
 
-	strtrim = malloc(sizeof(char) * ft_strsize(s, set));
-	if (!strtrim)
-		return (NULL);
-	start = ft_strlen(set);
 	i = 0;
-	while (start != ft_strsize(s, set))
+	start = 0;
+	end = ft_strlen(s1);
+	while (ft_findset(s1[start], set) == 1 && s1[start])
+		start++;
+	while (ft_findset(s1[end], set) == 1 && end > start)
+		end--;
+	res = malloc(sizeof(char) * (end - start + 1));
+	if (res == 0)
+		return (NULL);
+	while (start < end)
 	{
-		strtrim[start] = s[i];
+		res[i] = s1[start];
 		start++;
 		i++;
 	}
-	strtrim[start] = '\0';
-	return (strtrim);
+	res[i] = '\0';
+	return (res);
 }
+/*#include <stdio.h>
+
+int	main(void)
+{
+	// Test cases
+	char str1[] = "   Hello, World!   ";
+	char str2[] = "   \t \n  Trim Me! \t \n  ";
+	char str3[] = "NoTrimsHere";
+	char str4[] = " \t \n \t ";
+
+	// Test ft_strtrim
+	char *trimmed_str1 = ft_strtrim(str1, " \t\n");
+	char *trimmed_str2 = ft_strtrim(str2, " \t\n");
+	char *trimmed_str3 = ft_strtrim(str3, " \t\n");
+	char *trimmed_str4 = ft_strtrim(str4, " \t\n");
+
+	// Display the results
+	printf("Original: \"%s\", Trimmed: \"%s\"\n", str1, trimmed_str1);
+	printf("Original: \"%s\", Trimmed: \"%s\"\n", str2, trimmed_str2);
+	printf("Original: \"%s\", Trimmed: \"%s\"\n", str3, trimmed_str3);
+	printf("Original: \"%s\", Trimmed: \"%s\"\n", str4, trimmed_str4);
+
+	// Free the allocated memory
+	free(trimmed_str1);
+	free(trimmed_str2);
+	free(trimmed_str3);
+	free(trimmed_str4);
+
+	return (0);
+}*/
