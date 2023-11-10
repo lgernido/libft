@@ -3,55 +3,58 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:45:17 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/10 18:49:20 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/10 20:36:35 by luciegernid      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_findset(char c, const char *set)
+static int ft_findset(char c, const char *set)
 {
-	int	i;
+    int i;
 
-	i = 0;
-	while (set[i])
-	{
-		if (set[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
+    i = 0;
+    while (set[i])
+    {
+        if (set[i] == c)
+            return (1);
+        i++;
+    }
+    return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char *ft_strtrim(char const *s1, char const *set)
 {
-	int		start;
-	int		end;
-	char	*res;
-	int		i;
+    int start;
+    int end;
+    char *res;
+    int i;
 
-	i = 0;
-	start = 0;
-	end = ft_strlen(s1);
-	while (ft_findset(s1[start], set) && s1[start])
-		start++;
-	while (ft_findset(s1[end], set) && end > start)
-		end--;
+    i = 0;
+    start = 0;
+    end = ft_strlen(s1);
+    while (ft_findset(s1[start], set) && s1[start])
+        start++;
+    while (end > start && ft_findset(s1[end - 1], set))
+        end--;
 	res = malloc(sizeof(char) * (end - start + 1));
 	if (!res)
-		return (NULL);
-	while (start < end)
-	{
-		res[i] = s1[start];
-		start++;
-		i++;
-	}
+        return (NULL);
+    i = 0;
+    while (start < end)
+    {
+        res[i] = s1[start];
+        start++;
+        i++;
+    }
 	res[i] = '\0';
-	return (res);
+    return (res);
 }
+
+
 /*#include <stdio.h>
 
 int	main(void)

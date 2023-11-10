@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 08:17:11 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/10 10:39:11 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/10 20:28:10 by luciegernid      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,6 @@ char	**ft_split(char const *s, char c)
 		s += size;
 		i++;
 	}
-	res[i] = '\0';
+	res[i] = NULL;
 	return (res);
 }

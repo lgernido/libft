@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:58:19 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/10 17:26:36 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/10 20:50:33 by luciegernid      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		nmemb = 1;
 		size = 1;
 	}
-	if (nmemb > 0 && SIZE_MAX / nmemb < size)
+	if (size > 0 && SIZE_MAX / size < nmemb)
 		return (NULL);
 	tab = (void *)malloc(nmemb * size);
 	if (!tab)

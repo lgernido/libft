@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:26:15 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/10 17:20:20 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/10 20:58:40 by luciegernid      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_strncmp(const char *s1, const char *s2, unsigned int n);
+int     ft_tolower(int c);
+int	    ft_toupper(int c);
 int		ft_atoi(const char *str);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
-char	ft_tolower(int c);
-char	ft_toupper(int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);

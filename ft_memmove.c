@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:24:52 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/09 17:31:58 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/10 20:56:08 by luciegernid      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		while (i < len)
 		{
-			*(char *)(dst + i) = *(char *)(src + i);
+			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 			i++;
 		}
 	}
