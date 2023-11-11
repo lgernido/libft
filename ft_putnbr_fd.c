@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
+/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:21:35 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/07 22:08:37 by luciegernid      ###   ########.fr       */
+/*   Updated: 2023/11/11 18:11:59 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

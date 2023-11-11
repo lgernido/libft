@@ -6,19 +6,20 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 08:39:53 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/10 15:44:59 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/11 18:39:32 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
+#include "libft.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int i;
-	unsigned char *str1;
-	unsigned char *str2;
+	unsigned int	i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;
-
 	i = 0;
 	if (n == 0)
 		return (0);

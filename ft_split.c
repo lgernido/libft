@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
+/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 08:17:11 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/10 20:28:10 by luciegernid      ###   ########.fr       */
+/*   Updated: 2023/11/11 19:28:18 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,13 @@ static size_t	word_size(char const *s, char c)
 	return (len);
 }
 
+static void	*ft_protection(char *res)
+{
+	if (!res)
+		free(res);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -75,7 +82,7 @@ char	**ft_split(char const *s, char c)
 
 	words = count_words(s, c);
 	i = 0;
-	if (s == 0)
+	if (!s)
 		return (NULL);
 	res = malloc(sizeof(char *) * (words + 1));
 	if (!res)
@@ -86,11 +93,7 @@ char	**ft_split(char const *s, char c)
 			s++;
 		size = word_size(s, c);
 		res[i] = ft_strndup(s, size);
-		if (!res[i])
-		{
-			free(res[i]);
-			return (NULL);
-		}
+		ft_protection(res[i]);
 		s += size;
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:12:06 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/09 08:20:01 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/11 19:30:00 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while (s[i] != 0) // boucle qui determine la longueur de s
+	while (s[i] != 0)
 		i++;
-	while (i >= 0) // chercher dans la chaine a partir de la fin
+	while (i >= 0)
 	{
 		if (s[i] == (char)c)
 			return ((char *)(s + i));

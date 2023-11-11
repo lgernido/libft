@@ -20,8 +20,8 @@ OBJ_FILES	= $(SRC_FILES:.c=.o)
 #### RULES
 
 # Règle pour compiler en tant que bibliothèque dynamique pour le testeur
-#so:
-#	gcc -shared -o libft.so $(OBJ_FILES)
+so:
+	gcc -shared -o libft.so $(OBJ_FILES)
 
 ${NAME} : ${OBJ_FILES}
 		${AR} ${NAME} ${OBJ_FILES}
