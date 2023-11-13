@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:45:17 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/11 18:03:48 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/13 14:17:25 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*res;
 	int		i;
 
+	if (!s1)
+		return (NULL);
 	i = 0;
 	start = 0;
 	end = ft_strlen(s1);
+	if (!s1)
+		return (NULL);
 	while (ft_findset(s1[start], set) && s1[start])
 		start++;
 	while (end > start && ft_findset(s1[end - 1], set))
@@ -45,11 +49,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	i = 0;
 	while (start < end)
-	{
-		res[i] = s1[start];
-		start++;
-		i++;
-	}
+		res[i++] = s1[start++];
 	res[i] = '\0';
 	return (res);
 }

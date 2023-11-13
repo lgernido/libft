@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 08:17:11 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/11 19:28:18 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/13 14:15:12 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,10 @@ char	**ft_split(char const *s, char c)
 	int		words;
 	char	**res;
 
-	words = count_words(s, c);
-	i = 0;
 	if (!s)
 		return (NULL);
+	words = count_words(s, c);
+	i = 0;
 	res = malloc(sizeof(char *) * (words + 1));
 	if (!res)
 		return (NULL);

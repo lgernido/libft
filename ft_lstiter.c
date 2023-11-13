@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 15:55:01 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/13 14:19:53 by lgernido         ###   ########.fr       */
+/*   Created: 2023/11/13 15:52:20 by lgernido          #+#    #+#             */
+/*   Updated: 2023/11/13 17:42:00 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (s)
+	while (lst)
 	{
-		write(fd, s, ft_strlen(s));
-		write(fd, "\n", 1);
+		(*f)(lst->content);
+		lst = lst->next;
 	}
 }

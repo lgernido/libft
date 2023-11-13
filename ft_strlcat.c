@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:35:33 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/12 18:10:25 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/13 11:47:06 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	dest_length;
-	unsigned int	src_lenght;
+	size_t	i;
+	size_t	dest_length;
 
-	src_lenght = ft_strlen(src);
+	if (!dst && size <= 0)
+		return (0);
 	dest_length = ft_strlen(dst);
 	i = 0;
 	if (dest_length >= size)
@@ -32,5 +32,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		}
 		dst[dest_length + i] = 0;
 	}
-	return (dest_length + src_lenght);
+	return (dest_length + ft_strlen(src));
 }

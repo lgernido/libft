@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 15:55:01 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/13 14:19:53 by lgernido         ###   ########.fr       */
+/*   Created: 2023/11/13 15:56:51 by lgernido          #+#    #+#             */
+/*   Updated: 2023/11/13 17:52:06 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/* #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (s)
+	t_list	*new_list;
+
+	new_list = malloc(sizeof(t_list *) * ((*f)(lst->content)));
+	if (!new_list)
+		return (NULL);
+	while (lst)
 	{
-		write(fd, s, ft_strlen(s));
-		write(fd, "\n", 1);
+		new_list->content = (*f)(lst->content);
+		if (!(*f)(lst->content))
+			ft_lstclear(new_list, void(*del(void)));
+		lst = lst->next;
 	}
-}
+	return (new_list);
+} */

@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:24:52 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/11 18:45:44 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/13 12:06:04 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 
+	if (!dst && !src)
+		return (0);
 	i = 0;
 	if (dst > src)
 	{
