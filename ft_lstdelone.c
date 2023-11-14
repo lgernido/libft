@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luciegernidos <luciegernidos@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 15:28:00 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/13 17:33:13 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/14 05:44:30 by luciegernid      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (lst)
-	{
-		(*del)(lst->content);
-		free(lst);
-	}
+	if (lst == NULL || del == NULL)
+		return ;
+	(*del)(lst->content);
+	free(lst);
 }

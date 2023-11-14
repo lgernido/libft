@@ -4,7 +4,7 @@
 NAME		= libft.a
 CC			= gcc
 CFLAGS		= -Wall -Werror -Wextra
-AR 			= ar -rcsv
+AR 			= ar -rcs
 
 ###########################################################################
 #### SOURCES
@@ -17,7 +17,7 @@ ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
 OBJ_FILES	= $(SRC_FILES:.c=.o)
 
 BONUS_FILES = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
-ft_lstiter.c 
+ft_lstiter.c ft_lstmap.c
 
 OBJ_BONUS = ${BONUS_FILES:.c=.o}
 
@@ -25,8 +25,8 @@ OBJ_BONUS = ${BONUS_FILES:.c=.o}
 #### RULES
 
 # Règle pour compiler en tant que bibliothèque dynamique pour le testeur
-so: $(OBJ_FILES)
-	gcc -shared -o libft.so $(OBJ_FILES) $(OBJ_BONUS)
+#so: $(OBJ_FILES)
+#	gcc -shared -o libft.so $(OBJ_FILES) $(OBJ_BONUS)
 
 ${NAME} : ${OBJ_FILES}
 		${AR} ${NAME} ${OBJ_FILES}
@@ -42,9 +42,9 @@ fclean : clean
 re : fclean all
 
 bonus : ${OBJ_BONUS}
-		${NAME} {OBJ_BONUS} ar -rs
+		${AR} ${NAME} ${OBJ_BONUS}  
 
-.PHONY : all clean fclean 
+.PHONY : bonus all clean fclean re
 
 
 
