@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 18:25:28 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/13 15:01:52 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/14 07:43:53 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*element;
 
-	element = malloc(sizeof(content));
+	element = malloc(sizeof(t_list));
 	if (!element)
 		return (NULL);
 	element->content = content;

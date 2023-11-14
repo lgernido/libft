@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:58:04 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/11 18:12:51 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/14 09:47:19 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strdup(const char *s)
 	while (s[size] != 0)
 		size++;
 	dup = malloc(sizeof(char) * (size + 1));
-	if (dup == 0)
+	if (!dup)
 		return (NULL);
 	i = 0;
 	while (s[i])

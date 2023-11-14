@@ -2,7 +2,7 @@
 #### ARGUMENTS
 
 NAME		= libft.a
-CC			= gcc
+CC			= cc
 CFLAGS		= -Wall -Werror -Wextra
 AR 			= ar -rcs
 
@@ -24,11 +24,7 @@ OBJ_BONUS = ${BONUS_FILES:.c=.o}
 ###########################################################################
 #### RULES
 
-# Règle pour compiler en tant que bibliothèque dynamique pour le testeur
-#so: $(OBJ_FILES)
-#	gcc -shared -o libft.so $(OBJ_FILES) $(OBJ_BONUS)
-
-${NAME} : ${OBJ_FILES}
+$(NAME) : ${OBJ_FILES}
 		${AR} ${NAME} ${OBJ_FILES}
 
 all : clean fclean
@@ -39,13 +35,11 @@ clean :
 fclean : clean
 	rm -f ${NAME}
 
-re : fclean all
+re : fclean ${NAME}
 
-bonus : ${OBJ_BONUS}
-		${AR} ${NAME} ${OBJ_BONUS}  
+bonus : ${OBJ_BONUS} ${OBJ_FILES}
+		${AR} ${NAME} ${OBJ_BONUS} ${OBJ_FILES}
 
 .PHONY : bonus all clean fclean re
-
-
 
 

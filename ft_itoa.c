@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 09:06:41 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/10 13:29:12 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/14 09:07:28 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_itoa(int n)
 	i = 0;
 	size = ft_strsize(n);
 	str = malloc(sizeof(char) * size + 1);
-	if (str == 0)
+	if (!str)
 		return (NULL);
 	str[size] = '\0';
 	if (n < 0)

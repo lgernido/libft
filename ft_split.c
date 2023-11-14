@@ -6,13 +6,13 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 08:17:11 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/13 14:15:12 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/14 09:04:20 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strndup(const char *s, size_t n)
+static char	*ft_strndup(const char *s, size_t n)
 {
 	char	*dup;
 	size_t	i;

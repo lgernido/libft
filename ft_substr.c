@@ -6,13 +6,13 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:57:40 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/13 12:07:57 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/14 08:47:41 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_onesize(char const *s)
+static char	*ft_onesize(char const *s)
 {
 	char	*str;
 
