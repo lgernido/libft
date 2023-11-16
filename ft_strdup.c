@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 10:58:04 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/14 09:47:19 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:52:19 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strdup(const char *s)
 	int		i;
 	int		size;
 
+	if (!s)
+		return (NULL);
 	size = 0;
 	while (s[size] != 0)
 		size++;

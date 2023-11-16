@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:39:50 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/11 18:44:04 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:19:30 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		}
 		dst[i] = '\0';
 	}
-	while (src[i])
-		i++;
-	return (i);
+	return (ft_strlen(src));
 }

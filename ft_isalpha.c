@@ -6,12 +6,11 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 10:42:19 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/07 12:20:53 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:34:53 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {

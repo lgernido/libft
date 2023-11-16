@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:45:17 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/13 14:17:25 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:52:45 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	start = 0;
 	end = ft_strlen(s1);
-	if (!s1)
-		return (NULL);
 	while (ft_findset(s1[start], set) && s1[start])
 		start++;
 	while (end > start && ft_findset(s1[end - 1], set))

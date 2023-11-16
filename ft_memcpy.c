@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:02:11 by luciegernid       #+#    #+#             */
-/*   Updated: 2023/11/09 17:24:22 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:54:19 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		i = 0;
 		while (i < n)
 		{
-			*(char *)(dst + i) = *(char *)(src + i);
+			*(unsigned char *)(dst + i) = *(unsigned char *)(src + i);
 			i++;
 		}
 	}
