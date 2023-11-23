@@ -4,22 +4,34 @@
 NAME		= libft.a
 CC			= cc
 CFLAGS		= -Wall -Werror -Wextra
-AR 			= ar -rcs
+INCLUDE		= libft.h
+AR 			= ar -rc 
 
 ###########################################################################
 #### SOURCES
 
-SRC_FILES	= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c \
-ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c \
-ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c \
-ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c 
+FT_IS = ft_is/ft_isalnum.c ft_is/ft_isalpha.c ft_is/ft_isascii.c ft_is/ft_isdigit.c \
+ft_is/ft_isprint.c
+
+FT_LS = ft_ls/ft_lstadd_back.c ft_ls/ft_lstadd_front.c ft_ls/ft_lstclear.c ft_ls/ft_lstdelone.c \
+ft_ls/ft_lstiter.c ft_ls/ft_lstlast.c ft_ls/ft_lstmap.c ft_ls/ft_lstnew.c ft_ls/ft_lstsize.c
+
+FT_MEM = ft_mem/ft_memchr.c ft_mem/ft_memcmp.c ft_mem/ft_memcpy.c ft_mem/ft_memmove.c ft_mem/ft_memset.c
+
+FT_PRINTF = ft_printf/ft_easyprint.c ft_printf/ft_printf.c ft_printf/ft_printhex.c ft_printf/ft_printptr.c\
+ft_printf/ft_printui.c 
+
+FT_PUT = ft_put/ft_putchar.c ft_put/ft_putchar_fd.c ft_put/ft_putendl_fd.c ft_put/ft_putnbr_fd.c ft_put/ft_putstr.c 
+
+FT_STR = ft_str/ft_strchr.c ft_str/ft_strdup.c ft_str/ft_striteri.c ft_str/ft_strjoin.c ft_str/ft_strlcat.c ft_str/ft_strlcpy.c \
+ft_str/ft_strlen.c ft_str/ft_strmapi.c ft_str/ft_strncmp.c ft_str/ft_strndup.c ft_str/ft_strnstr.c ft_str/ft_strrchr.c ft_str/ft_strtrim.c\
+ft_str/ft_substr.c 
+
+OTHERS = others/ft_atoi.c others/ft_bzero.c others/ft_calloc.c others/ft_itoa.c others/ft_split.c others/ft_tolower.c others/ft_toupper.c
+
+SRC_FILES	= $(FT_IS) $(FT_LS) $(FT_MEM) $(FT_PRINTF) $(FT_PUT) $(FT_STR) $(OTHERS)
 
 OBJ_FILES	= $(SRC_FILES:.c=.o)
-
-BONUS_FILES = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
-ft_lstiter.c ft_lstmap.c
-
-OBJ_BONUS = ${BONUS_FILES:.c=.o}
 
 ###########################################################################
 #### RULES
@@ -27,18 +39,19 @@ OBJ_BONUS = ${BONUS_FILES:.c=.o}
 $(NAME) : ${OBJ_FILES}
 		${AR} ${NAME} ${OBJ_FILES}
 
+%.o: %.c $(INCLUDE)
+	$(CC) $(FLAGS) -I ./ -c $< -o $@
+
 all : clean fclean
 
 clean :
 	rm -f *.o
+	rm -f *.o ${OBJ_FILES}
 
 fclean : clean
 	rm -f ${NAME}
 
 re : fclean ${NAME}
-
-bonus : ${OBJ_BONUS} ${OBJ_FILES}
-		${AR} ${NAME} ${OBJ_BONUS} ${OBJ_FILES}
 
 .PHONY : bonus all clean fclean re
 
