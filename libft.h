@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:26:15 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/23 09:59:12 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/25 13:24:15 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,6 @@ char				*ft_strndup(const char *s, size_t n);
 
 char				**ft_split(char const *s, char c);
 
-size_t				ft_strlen(const char *str);
-size_t				ft_strlcat(char *dst, const char *src, size_t size);
-size_t				ft_strlcpy(char *dst, const char *src, size_t size);
-
 void				*ft_memchr(const void *s, int c, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t n);
@@ -88,6 +84,10 @@ void				ft_putstr(char *str);
 void				ft_putchar(char c);
 void				ft_writeptr(unsigned long nb, const char format);
 void				ft_writehex(unsigned int nb, const char format);
+
+size_t				ft_strlen(const char *str);
+size_t				ft_strlcat(char *dst, const char *src, size_t size);
+size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 
 t_list				*ft_lstnew(void *content);
 t_list				*ft_lstlast(t_list *lst);
