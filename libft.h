@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:26:15 by lgernido          #+#    #+#             */
-/*   Updated: 2023/11/25 13:24:15 by lgernido         ###   ########.fr       */
+/*   Updated: 2023/11/29 18:44:11 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,14 @@
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1000
+# endif
+
+# ifndef FD_MAX
+#  define FD_MAX 1024
+# endif
 
 typedef struct s_list
 {
@@ -61,6 +69,9 @@ char				*ft_itoa(int n);
 char				*ft_strtrim(char const *s, char const *set);
 char				*ft_uitoa(unsigned int n);
 char				*ft_strndup(const char *s, size_t n);
+char				*get_next_line(int fd);
+char				*ft_clean_stash(char *line);
+char				*ft_read_line(int fd, char *buffer, char *stash);
 
 char				**ft_split(char const *s, char c);
 
