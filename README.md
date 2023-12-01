@@ -13,7 +13,7 @@ The files are organized as followed :
 - ft_is : for all the functions that check for a specific character type in a string of characters
 - ft_str : for all the functions that manipulate strings
 - ft_put :for all function that write on the terminal as an output
-- ft_lst : for all the functions that manipulate chained lists
+- ft_ls : for all the functions that manipulate chained lists
 - ft_printf : for all the functions necessary to code the printf function
 - gnl : for all the functions necessary to code the get_next_line function
 - ft_others : for all function that don't fit into those catgories
@@ -48,4 +48,21 @@ The files are organized as followed :
   - ft_strtrim : Allocate and return a string of characters wihtout a set of given characters at the beginning or the end of the string
   - ft_strmapi : Apply a function to all characters from a string of characters
   - ft_stritetri : Apply a function and allocate the memory for the result of this function on a string of characters
+
+  Ft_put :
+  - ft_putchar_fd : Writes a character in a file descriptor
+  - ft_putstr_fd : Writes a string of character in a file descriptor
+  - ft_putendl_fd : Writes a string of characters in a file descriptor followed by a newline
+  - ft_putnbr_fd : Writes an integer in a file descriptor
+ 
+  Ft_ls :
+  - ft_lstnew : Creates a new element of the chained list
+  - ft_lstsize : Compute the number of element of a chained list
+  - ft_lstlast : Finds the last element of the chained list (the element that points to NULL)
+  - ft_lstaddback : Adds a new element at the end of the chained list
+  - ft_lstaddfront : Adds a new element at the beginning of the chained list
+  - ft_lstdelone : Deletes on element of the chained list
+  - ft_lstclear : Deletes all the elements of the chained list and free the previously allocated space
+  - ft_lstiteri : Apply a function to all the elements of the chained list
+  - ft_lstmap : Apply a function to all the elements of the chained list a create and new chained list with the result
 
