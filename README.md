@@ -27,12 +27,12 @@ The files are organized as followed :
   - ft_memchr : Search a character in a specific memory area
   - ft_memcmp : Compare 2 strings of characters in memory areas
 
-    Ft_is :
-    - ft_isalpha : Check if a character is a part of the alphabet
-    - ft_isdigit : Check if a character is a digit (from 0 to 9)
-    - ft_isalnum : Check if a character is a part the alphabet or a digit
-    - ft_isascii : Check if a character is a part of the ASCII table
-    - ft_isprint : Check if the character is printable
+  Ft_is :
+  - ft_isalpha : Check if a character is a part of the alphabet
+  - ft_isdigit : Check if a character is a digit (from 0 to 9)
+  - ft_isalnum : Check if a character is a part the alphabet or a digit
+  - ft_isascii : Check if a character is a part of the ASCII table
+  - ft_isprint : Check if the character is printable
    
   Ft_str :
   - ft_strlcpy : Copy a string of character into another and returns the lenght of string copied
