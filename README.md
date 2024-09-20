@@ -22,7 +22,7 @@ The files are organized as followed :
 - gnl : for all the functions necessary to code the get_next_line function
 - ft_others : for all function that don't fit into those catgories
 
-  Here is a more detailed description of the files of the librairy;
+  ### Here is a more detailed description of the files of the librairy :
 
   #### Ft_mem :
   - ft_memset : Fill the memory with a given byte
