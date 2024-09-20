@@ -53,13 +53,13 @@ The files are organized as followed :
   - ft_strmapi : Apply a function to all characters from a string of characters
   - ft_stritetri : Apply a function and allocate the memory for the result of this function on a string of characters
 
-    #### Ft_put :
+  #### Ft_put :
   - ft_putchar_fd : Writes a character in a file descriptor
   - ft_putstr_fd : Writes a string of character in a file descriptor
   - ft_putendl_fd : Writes a string of characters in a file descriptor followed by a newline
   - ft_putnbr_fd : Writes an integer in a file descriptor
  
-    #### Ft_ls :
+  #### Ft_ls :
   - ft_lstnew : Creates a new element of the chained list
   - ft_lstsize : Compute the number of element of a chained list
   - ft_lstlast : Finds the last element of the chained list (the element that points to NULL)
