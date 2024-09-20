@@ -18,9 +18,7 @@ The files are organized as followed :
 - ft_str : for all the functions that manipulate strings
 - ft_put :for all function that write on the terminal as an output
 - ft_ls : for all the functions that manipulate chained lists
-- ft_printf : for all the functions necessary to code the printf function
-- gnl : for all the functions necessary to code the get_next_line function
-- ft_others : for all function that don't fit into those catgories
+- others : for all function that don't fit into those categories
 
   ### Here is a more detailed description of the files of the librairy :
 
@@ -69,4 +67,44 @@ The files are organized as followed :
   - ft_lstclear : Deletes all the elements of the chained list and free the previously allocated space
   - ft_lstiteri : Apply a function to all the elements of the chained list
   - ft_lstmap : Apply a function to all the elements of the chained list a create and new chained list with the result
+ 
+  #### Ft_other :
+  - ft_atoi : Converts a string input into an integer
+  - ft_itoa : Converts an integer input a string
+  - ft_tolower : Converts upper case characters into lower case characters
+  - ft_toupper : Converts lower case characters into upper case characters
+  - ft_bzero : Sets all bytes in a block of memory to zero
+  - ft_calloc : Allocates dynamically memory for an array of elements and initializes all bits to zero
+  - ft_split : Divides a string into multiple substrings based on a specified delimiter and returns an array of these substring
 
+## :open_file_folder: Installation 
+
+In order to use the library, you can include this folder in your project and don't forget to run the command "make"
+for the the libft in your project's Makefile.
+Here is an example of how you can include a rule in your Makefile to use the libft in any project. 
+Define the following variables :
+```
+LIBFT_PATH	= libft/
+LIBFT		= $(LIBFT_PATH)libft.a
+```
+Then, when building the .o files, don't forget to include the libft.
+```
+%.o: %.c
+	@$(CC) $(CFLAGS) -I$(INCLUDE_PATH) -I$(LIBFT_PATH) -I/usr/include -c $< -o $@
+```
+Same goes when building the executable file of your project.
+```
+$(NAME): $(OBJ_FILES)
+	@make -C $(LIBFT_PATH) --no-print-directory -s
+	@$(CC) $(CFLAGS) $(OBJ_FILES) $(LIBFT) -o $(NAME)
+```
+Lastly, when building the clean and fclean rule don't forget to include the libft as well !
+```
+clean :
+	@rm -f *.o ${OBJ_FILES}
+	@make clean -C $(LIBFT_PATH) --no-print-directory -s
+
+fclean : clean
+	@rm -f ${NAME}
+	@make fclean -C $(LIBFT_PATH) --no-print-directory -s
+```
