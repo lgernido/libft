@@ -20,7 +20,7 @@ The directories are organized as follows :
 - ft_ls : for all the functions that manipulate chained lists
 - others : for all function that don't fit into those categories
 
-  ### Here is a more detailed description of the files of the librairy :
+  ### Here is a more detailed description of the files of the library :
 
   #### Ft_mem :
   - ft_memset : Fill the memory with a given byte
