@@ -12,7 +12,7 @@ Lastly, as bonuses the third set of function focuses on chained lists.
 
 ## :pushpin: File Organisation
 
-The files are organized as followed : 
+The directories are organized as follows : 
 - ft_mem : for all the functions that manipulate memory
 - ft_is : for all the functions that check for a specific character type in a string of characters
 - ft_str : for all the functions that manipulate strings
